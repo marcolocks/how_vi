@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Autoescola</string>
+    <string name="action_cadastros">Cadastros</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Autoescola</string>
+    <string name="second_fragment_label">Cadastros</string>
+    <string name="next">Próximo</string>
+    <string name="previous">Anterior</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
