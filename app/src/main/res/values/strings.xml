@@ -2,11 +2,18 @@
     <string name="app_name">Autoescola</string>
     <string name="action_cadastros">Cadastros</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Autoescola</string>
+    <string name="first_fragment_label">Autoescola MVP</string>
     <string name="second_fragment_label">Cadastros</string>
+    <string name="instrutor_main_label">Cadastro de Instrutor</string>
+    <string name="aluno_main_label">Cadastro de Aluno</string>
+    <string name="veiculo_main_label">Cadastro de Veículo</string>
     <string name="next">Próximo</string>
-    <string name="previous">Anterior</string>
+    <string name="manterInstrutor">Instrutores</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="novo_instrutor">Novo Instrutor</string>
+    <string name="digite_o_cpf_do_instrutor">Digite o CPF do Instrutor</string>
+    <string name="digite_o_nome_do_instrutor">Digite o Nome do Instrutor</string>
+    <string name="salvar">Salvar</string>
 </resources>

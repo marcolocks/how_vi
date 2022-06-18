@@ -1,0 +1,116 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d09fb89353a41c1c18e167047285bdd4",
+    "entities": [
+      {
+        "tableName": "tbInstrutor",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`coInstrutor` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nuCPF` TEXT, `noInstrutor` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "coInstrutor",
+            "columnName": "coInstrutor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nuCPF",
+            "columnName": "nuCPF",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "noInstrutor",
+            "columnName": "noInstrutor",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "coInstrutor"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tbAluno",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`coAluno` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nuCPF` TEXT, `noAluno` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "coAluno",
+            "columnName": "coAluno",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nuCPF",
+            "columnName": "nuCPF",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "noAluno",
+            "columnName": "noAluno",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "coAluno"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tbVeiculo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`coVeiculo` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `deMarca` TEXT, `deModelo` TEXT, `nuPlaca` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "coVeiculo",
+            "columnName": "coVeiculo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deMarca",
+            "columnName": "deMarca",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deModelo",
+            "columnName": "deModelo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nuPlaca",
+            "columnName": "nuPlaca",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "coVeiculo"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd09fb89353a41c1c18e167047285bdd4')"
+    ]
+  }
+}
