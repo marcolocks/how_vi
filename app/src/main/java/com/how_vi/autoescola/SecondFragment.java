@@ -32,12 +32,40 @@ private FragmentSecondBinding binding;
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
+        binding.buttonInstrutor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), InstrutorActivity.class);
+                getActivity().startActivity(intent);
+
+
+                //NavHostFragment.findNavController(SecondFragment.this).navigate(R.id.action_SecondFragment_to_FirstFragment);
+
+            }
+        });
+
+        binding.buttonAluno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), AlunoActivity.class);
+                getActivity().startActivity(intent);
+
+
+                //NavHostFragment.findNavController(SecondFragment.this).navigate(R.id.action_SecondFragment_to_FirstFragment);
+
+            }
+        });
+
+        binding.buttonVeiculo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), VeiculoActivity.class);
                 getActivity().startActivity(intent);
 
 

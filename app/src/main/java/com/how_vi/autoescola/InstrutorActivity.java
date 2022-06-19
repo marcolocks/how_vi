@@ -67,7 +67,7 @@ public class InstrutorActivity extends AppCompatActivity {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 viewModelInstrutor.delete(adapter.getInstrutorAt(viewHolder.getAdapterPosition()));
-                Toast.makeText(InstrutorActivity.this, "Curso Removido", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InstrutorActivity.this, "Instrutor Removido", Toast.LENGTH_SHORT).show();
             }
         }).attachToRecyclerView(instrutorRV);
 

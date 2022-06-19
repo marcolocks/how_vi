@@ -7,23 +7,45 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/textview_second"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/button_second"-->
+<!--        />-->
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/button_instrutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/manterInstrutor"
+        app:layout_constraintBottom_toTopOf="@id/button_aluno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<!--        app:layout_constraintTop_toBottomOf="@id/textview_second" />-->
+
+    <Button
+        android:id="@+id/button_aluno"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="@string/manterAluno"
+        app:layout_constraintBottom_toBottomOf="@id/button_veiculo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_instrutor" />
+
+    <Button
+        android:id="@+id/button_veiculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/manterVeiculo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@id/button_aluno" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

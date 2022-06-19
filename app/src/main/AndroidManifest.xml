@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.how_vi.autoescola">
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,32 +12,61 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Autoescola"
         tools:targetApi="31">
+
         <activity
             android:name=".NovoVeiculoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Novo Veículo"
+            android:parentActivityName=".VeiculoActivity">
+        <meta-data
+            android:name="android:support.PARENT_ACTIVITY"
+            android:value=".VeiculoActivity" />
+        </activity>
         <activity
             android:name=".NovoAlunoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Novo Aluno"
+            android:parentActivityName=".AlunoActivity">
+        <meta-data
+            android:name="android:support.PARENT_ACTIVITY"
+            android:value=".AlunoActivity" />
+        </activity>
         <activity
             android:name=".NovoInstrutorActivity"
-            android:label="@string/novo_instrutor"
             android:exported="false"
+            android:label="@string/novo_instrutor"
             android:parentActivityName=".InstrutorActivity">
             <meta-data
                 android:name="android:support.PARENT_ACTIVITY"
-                android:value=".Instrutor_Activity"/>
+                android:value=".InstrutorActivity" />
         </activity>
         <activity
-            android:name="InstrutorActivity"
-            android:label="@string/instrutor_main_label"
+            android:name=".InstrutorActivity"
             android:exported="false"
+            android:label="@string/instrutor_main_label"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android:support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
-
-
+        <activity
+            android:name=".AlunoActivity"
+            android:exported="false"
+            android:label="Cadastro de Aluno"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android:support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".VeiculoActivity"
+            android:exported="false"
+            android:label="Cadastro de Veículo"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android:support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
