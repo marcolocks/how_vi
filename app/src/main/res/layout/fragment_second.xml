@@ -31,7 +31,7 @@
     <Button
         android:id="@+id/button_aluno"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:text="@string/manterAluno"
         app:layout_constraintBottom_toBottomOf="@id/button_veiculo"
         app:layout_constraintEnd_toEndOf="parent"

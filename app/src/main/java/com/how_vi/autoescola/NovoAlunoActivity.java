@@ -11,6 +11,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.how_vi.autoescola.utils.MaskEditUtil;
+
 import java.util.Date;
 
 public class NovoAlunoActivity extends AppCompatActivity {
@@ -35,6 +37,9 @@ public class NovoAlunoActivity extends AppCompatActivity {
         nuCPFEdt = findViewById(R.id.idEdtnuCPFAluno);
         noAlunoEdt = findViewById(R.id.idEdtnoAluno);
         alunoBtn = findViewById(R.id.idBtnSalvarAluno);
+
+        nuCPFEdt.addTextChangedListener(MaskEditUtil.mask(nuCPFEdt, MaskEditUtil.FORMAT_CPF));
+
 
         // intent para receber valores via intent
         Intent intent = getIntent();

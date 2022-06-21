@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="@string/digite_o_cpf_do_instrutor" />
+        android:hint="@string/digite_o_cpf_do_instrutor"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/idEdtnoInstrutor"
