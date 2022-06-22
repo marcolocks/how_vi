@@ -78,8 +78,8 @@ public class InstrutorActivity extends AppCompatActivity {
                 intent.putExtra(NovoInstrutorActivity.EXTRA_COD_INSTRUTOR,model.getCoInstrutor());
                 intent.putExtra(NovoInstrutorActivity.EXTRA_CPF_INSTRUTOR,model.getNuCPF());
                 intent.putExtra(NovoInstrutorActivity.EXTRA_NOME_INSTRUTOR,model.getNoInstrutor());
-                // todo: ajustar quando houver spinner
-                //intent.putExtra(NovoInstrutorActivity.EXTRA_DT_NASC_INSTRUTOR,model.get());
+                intent.putExtra(NovoInstrutorActivity.EXTRA_DT_NASC_INSTRUTOR,model.getDtNascimento());
+                intent.putExtra(NovoInstrutorActivity.EXTRA_NU_TELEFONE_INSTRUTOR,model.getNuTelefone());
 
                 startActivityForResult(intent, EDIT_INSTRUTOR_REQUEST);
             }
@@ -94,9 +94,9 @@ public class InstrutorActivity extends AppCompatActivity {
             assert data != null;
             String nuCPF = data.getStringExtra(NovoInstrutorActivity.EXTRA_CPF_INSTRUTOR);
             String noInstrutor = data.getStringExtra(NovoInstrutorActivity.EXTRA_NOME_INSTRUTOR);
-            // todo: ajustar quando houver spinner
-            //String dtNascimento = data.getStringExtra(NovoInstrutorActivity.EXTRA_DT_NASC_INSTRUTOR);
-            InstrutorModel instrutorModel = new InstrutorModel(nuCPF, noInstrutor);
+            String dtNascimento = data.getStringExtra(NovoInstrutorActivity.EXTRA_DT_NASC_INSTRUTOR);
+            String nuTelefone = data.getStringExtra(NovoInstrutorActivity.EXTRA_NU_TELEFONE_INSTRUTOR);
+            InstrutorModel instrutorModel = new InstrutorModel(nuCPF, noInstrutor, dtNascimento, nuTelefone);
             viewModelInstrutor.insert(instrutorModel);
             Toast.makeText(this, "Instrutor salvo", Toast.LENGTH_SHORT).show();
         } else if (requestCode == EDIT_INSTRUTOR_REQUEST && resultCode == RESULT_OK){
@@ -108,9 +108,9 @@ public class InstrutorActivity extends AppCompatActivity {
             }
             String nuCPFInstrutor = data.getStringExtra(NovoInstrutorActivity.EXTRA_CPF_INSTRUTOR);
             String noInstrutor = data.getStringExtra(NovoInstrutorActivity.EXTRA_NOME_INSTRUTOR);
-            // todo: ajustar quando houver spinner
-            // String dtNascInstrutor = data.getStringExtra(NovoInstrutorActivity.EXTRA_DT_NASC_INSTRUTOR);
-            InstrutorModel instrutorModel = new InstrutorModel(nuCPFInstrutor,noInstrutor);
+            String dtNascInstrutor = data.getStringExtra(NovoInstrutorActivity.EXTRA_DT_NASC_INSTRUTOR);
+            String nuTelefoneInstutor = data.getStringExtra(NovoInstrutorActivity.EXTRA_NU_TELEFONE_INSTRUTOR);
+            InstrutorModel instrutorModel = new InstrutorModel(nuCPFInstrutor,noInstrutor,dtNascInstrutor,nuTelefoneInstutor);
             instrutorModel.setCoInstrutor(coInstrutor);
             viewModelInstrutor.update(instrutorModel);
             instrutorModel.setCoInstrutor(coInstrutor);

@@ -14,7 +14,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="novo_instrutor">Novo Instrutor</string>
+    <string name="novo_instrutor">Instrutor</string>
     <string name="digite_o_cpf_do_instrutor">Digite o CPF do Instrutor</string>
     <string name="digite_o_nome_do_instrutor">Digite o Nome do Instrutor</string>
     <string name="salvar">Salvar</string>
@@ -23,4 +23,8 @@
     <string name="digite_a_marca_do_veiculo">Digite a Marca do Veículo</string>
     <string name="digite_o_modelo_do_veiculo">Digite o Modelo do Veículo</string>
     <string name="digite_a_placa_do_veiculo">Digite a Placa do Veículo</string>
+    <string name="data_de_nascimento">Data de nascimento</string>
+    <string name="numero_de_telefone">Número de Telefone</string>
+    <string name="nome_instrutor">Nome do Instrutor</string>
+    <string name="cpf_instrutor">CPF Instrutor</string>
 </resources>

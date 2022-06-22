@@ -4,18 +4,15 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
-import androidx.room.Dao;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 @Database(entities = {InstrutorModel.class, AlunoModel.class, VeiculoModel.class},version = 1)
 public abstract class AutoEscolaDb extends RoomDatabase {
-    //@TypeConverters({Converters.class})
-    private static AutoEscolaDb instance;
 
+    private static AutoEscolaDb instance;
     public abstract InstrutorDao instrutorDao();
     public abstract AlunoDao alunoDao();
     public abstract VeiculoDao veiculoDao();
@@ -55,4 +52,5 @@ public abstract class AutoEscolaDb extends RoomDatabase {
             return null;
         }
     }
+
 }

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "d09fb89353a41c1c18e167047285bdd4",
+    "identityHash": "0e6115ef9a43e790e31d981be97c2053",
     "entities": [
       {
         "tableName": "tbInstrutor",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`coInstrutor` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nuCPF` TEXT, `noInstrutor` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`coInstrutor` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nuCPF` TEXT, `noInstrutor` TEXT, `dtNascimento` TEXT, `nuTelefone` TEXT)",
         "fields": [
           {
             "fieldPath": "coInstrutor",
@@ -25,6 +25,18 @@
             "columnName": "noInstrutor",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "dtNascimento",
+            "columnName": "dtNascimento",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nuTelefone",
+            "columnName": "nuTelefone",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -38,7 +50,7 @@
       },
       {
         "tableName": "tbAluno",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`coAluno` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nuCPF` TEXT, `noAluno` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`coAluno` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nuCPF` TEXT, `noAluno` TEXT, `dtNascAluno` TEXT, `nuTelefoneAluno` TEXT)",
         "fields": [
           {
             "fieldPath": "coAluno",
@@ -55,6 +67,18 @@
           {
             "fieldPath": "noAluno",
             "columnName": "noAluno",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dtNascAluno",
+            "columnName": "dtNascAluno",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nuTelefoneAluno",
+            "columnName": "nuTelefoneAluno",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -110,7 +134,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd09fb89353a41c1c18e167047285bdd4')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0e6115ef9a43e790e31d981be97c2053')"
     ]
   }
 }

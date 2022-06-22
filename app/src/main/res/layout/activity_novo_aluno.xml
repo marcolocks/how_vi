@@ -22,6 +22,24 @@
         android:layout_margin="10dp"
         android:hint="@string/digite_o_nome_do_aluno" />
 
+    <EditText
+        android:id="@+id/idEdtDtNascAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/data_de_nascimento"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/idEdtnuTelAluno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/numero_de_telefone"
+        android:inputType="number" />
+
+
     <Button
         android:id="@+id/idBtnSalvarAluno"
         android:layout_width="match_parent"

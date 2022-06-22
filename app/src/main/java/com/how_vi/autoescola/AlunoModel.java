@@ -3,6 +3,11 @@ package com.how_vi.autoescola;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Entity(tableName = "tbAluno")
@@ -12,13 +17,14 @@ public class AlunoModel {
     private int coAluno;
     private String nuCPF;
     private String noAluno;
-    //private Date dtNascimento;
+    private String dtNascAluno;
+    private String nuTelefoneAluno;
 
-    //public AlunoModel(String nuCPF, String noAluno, Date dtNascimento){
-    public AlunoModel(String nuCPF, String noAluno){
+    public AlunoModel(String nuCPF, String noAluno, String dtNascAluno, String nuTelefoneAluno){
         this.nuCPF = nuCPF;
         this.noAluno = noAluno;
-        //this.dtNascimento = dtNascimento;
+        this.dtNascAluno = dtNascAluno;
+        this.nuTelefoneAluno = nuTelefoneAluno;
     }
 
     public int getCoAluno() {
@@ -44,13 +50,22 @@ public class AlunoModel {
     public void setNoAluno(String noAluno) {
         this.noAluno = noAluno;
     }
-/*
-    public Date getDtNascimento() {
-        return dtNascimento;
+
+    public String getDtNascAluno() {
+        return dtNascAluno;
     }
 
-    public void setDtNascimento(Date dtNascimento) {
-        this.dtNascimento = dtNascimento;
+    public void setDtNascimento(String dtNascAluno) {
+        this.dtNascAluno = dtNascAluno;
+
     }
-*/
+
+    public String getNuTelefoneAluno() {
+        return nuTelefoneAluno;
+    }
+
+    public void setNuTelefone(String nuTelefoneAluno) {
+        this.nuTelefoneAluno = nuTelefoneAluno;
+    }
+
 }

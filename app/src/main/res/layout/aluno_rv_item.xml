@@ -15,7 +15,7 @@
         android:layout_margin="5dp"
         android:orientation="vertical">
 
-        <!--text view para o cpf do instrutor-->
+        <!--text view para o cpf do aluno-->
         <TextView
             android:id="@+id/idTVnuCPFAluno"
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:textStyle="bold"
             android:textSize="16sp" />
 
-        <!--text view para o nome do instrutor-->
+        <!--text view para o nome do aluno-->
         <TextView
             android:id="@+id/idTVnoAluno"
             android:layout_width="match_parent"
@@ -35,6 +35,7 @@
             android:text="Nome Aluno"
             android:textColor="@color/black"
             android:textSize="15sp" />
+
 
         <!--text view para a data de nascimento -->
         <!--

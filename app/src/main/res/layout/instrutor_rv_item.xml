@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="CPF Instrutor"
+            android:text="@string/cpf_instrutor"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="16sp" />
@@ -32,21 +32,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Nome Instrutor"
+            android:text="@string/nome_instrutor"
             android:textColor="@color/black"
             android:textSize="15sp" />
-
-        <!--text view para a data de nascimento -->
-        <!--
+<!--
         <TextView
-            android:id="@+id/idTVCourseDuration"
+            android:id="@+id/idTVDtNascInstrutor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Course Duration"
+            android:text="@string/data_de_nascimento"
             android:textColor="@color/black"
-            android:textSize="15sp" />
-        -->
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/idTVNuTelefoneInstrutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/numero_de_telefone"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+-->
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

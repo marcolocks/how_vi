@@ -12,13 +12,15 @@ public class InstrutorModel {
     private int coInstrutor;
     private String nuCPF;
     private String noInstrutor;
-//    private Date dtNascimento;
+    private String dtNascimento;
+    private String nuTelefone;
 
-    //public InstrutorModel(String nuCPF,String noInstrutor, Date dtNascimento){
-    public InstrutorModel(String nuCPF,String noInstrutor){
+    public InstrutorModel(String nuCPF,String noInstrutor, String dtNascimento, String nuTelefone){
+
         this.nuCPF = nuCPF;
         this.noInstrutor = noInstrutor;
-      //  this.dtNascimento = dtNascimento;
+        this.dtNascimento = dtNascimento;
+        this.nuTelefone = nuTelefone;
     }
 
     public int getCoInstrutor() {
@@ -45,11 +47,19 @@ public class InstrutorModel {
         this.noInstrutor = noInstrutor;
     }
 
-   /* public Date getDtNascimento() {
+    public String getDtNascimento() {
         return dtNascimento;
     }
 
-    public void setDtNascimento(Date dtNascimento) {
+    public void setDtNascimento(String dtNascimento) {
         this.dtNascimento = dtNascimento;
-    } */
+    }
+
+    public String getNuTelefone() {
+        return nuTelefone;
+    }
+
+    public void setNuTelefone(String nuTelefone) {
+        this.nuTelefone = nuTelefone;
+    }
 }

@@ -17,6 +17,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 
 public class AlunoActivity extends AppCompatActivity {
@@ -78,8 +83,8 @@ public class AlunoActivity extends AppCompatActivity {
                 intent.putExtra(NovoAlunoActivity.EXTRA_COD_ALUNO,model.getCoAluno());
                 intent.putExtra(NovoAlunoActivity.EXTRA_CPF_ALUNO,model.getNuCPF());
                 intent.putExtra(NovoAlunoActivity.EXTRA_NOME_ALUNO,model.getNoAluno());
-                // todo: ajustar quando houver spinner
-                //intent.putExtra(NovoAlunoActivity.EXTRA_DT_NASC_ALUNO,model.get());
+                intent.putExtra(NovoAlunoActivity.EXTRA_DT_NASC_ALUNO,model.getDtNascAluno());
+                intent.putExtra(NovoAlunoActivity.EXTRA_NU_TELEFONE_ALUNO,model.getNuTelefoneAluno());
 
                 startActivityForResult(intent, EDIT_ALUNO_REQUEST);
             }
@@ -94,9 +99,10 @@ public class AlunoActivity extends AppCompatActivity {
             assert data != null;
             String nuCPF = data.getStringExtra(NovoAlunoActivity.EXTRA_CPF_ALUNO);
             String noAluno = data.getStringExtra(NovoAlunoActivity.EXTRA_NOME_ALUNO);
-            // todo: ajustar quando houver spinner
-            //String dtNascimento = data.getStringExtra(NovoAlunoActivity.EXTRA_DT_NASC_ALUNO);
-            AlunoModel alunoModel = new AlunoModel(nuCPF, noAluno);
+            String dtNascAluno = data.getStringExtra(NovoAlunoActivity.EXTRA_DT_NASC_ALUNO);
+            String nuTelefone = data.getStringExtra(NovoAlunoActivity.EXTRA_NU_TELEFONE_ALUNO);
+
+            AlunoModel alunoModel = new AlunoModel(nuCPF, noAluno,dtNascAluno,nuTelefone);
             viewModelAluno.insert(alunoModel);
             Toast.makeText(this, "Aluno salvo", Toast.LENGTH_SHORT).show();
         } else if (requestCode == EDIT_ALUNO_REQUEST && resultCode == RESULT_OK){
@@ -108,9 +114,11 @@ public class AlunoActivity extends AppCompatActivity {
             }
             String nuCPFAluno = data.getStringExtra(NovoAlunoActivity.EXTRA_CPF_ALUNO);
             String noAluno = data.getStringExtra(NovoAlunoActivity.EXTRA_NOME_ALUNO);
-            // todo: ajustar quando houver spinner
-            // String dtNascAluno = data.getStringExtra(NovoAlunoActivity.EXTRA_DT_NASC_ALUNO);
-            AlunoModel alunoModel = new AlunoModel(nuCPFAluno,noAluno);
+            String dtNascAluno = data.getStringExtra(NovoAlunoActivity.EXTRA_DT_NASC_ALUNO);
+            String nuTelefoneAluno = data.getStringExtra(NovoAlunoActivity.EXTRA_NU_TELEFONE_ALUNO);
+
+
+            AlunoModel alunoModel = new AlunoModel(nuCPFAluno,noAluno,dtNascAluno,nuTelefoneAluno);
             alunoModel.setCoAluno(coAluno);
             viewModelAluno.update(alunoModel);
             alunoModel.setCoAluno(coAluno);

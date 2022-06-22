@@ -27,8 +27,9 @@ public class InstrutorRVAdapter extends ListAdapter<InstrutorModel, InstrutorRVA
         @Override
         public boolean areContentsTheSame(@NonNull InstrutorModel oldItem, @NonNull InstrutorModel newItem) {
             return oldItem.getNuCPF().equals(newItem.getNuCPF()) &&
-                   oldItem.getNoInstrutor().equals(newItem.getNoInstrutor()); /*&&
-                   oldItem.getDtNascimento().equals(newItem.getDtNascimento());*/
+                   oldItem.getNoInstrutor().equals(newItem.getNoInstrutor()) &&
+                   oldItem.getDtNascimento().equals(newItem.getDtNascimento()) &&
+                    oldItem.getNuTelefone().equals(newItem.getNuTelefone());
         }
     };
 
@@ -39,13 +40,14 @@ public class InstrutorRVAdapter extends ListAdapter<InstrutorModel, InstrutorRVA
                 .inflate(R.layout.instrutor_rv_item, parent, false);
         return new ViewHolder(item);
     }
-    // TODO: 16/06/2022 Ajustar componente de data
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position){
         InstrutorModel model = getInstrutorAt(position);
         holder.nuCPFInstrutorTV.setText(model.getNuCPF());
         holder.noInstrutorTV.setText(model.getNoInstrutor());
-        //holder.dtNascInstrutorTV.settext(model.getDtNascimento());
+        //holder.dtNascInstrutorTV.setText(model.getDtNascimento());
+        //holder.nuTelefoneTV.setText(model.getNuTelefone());
     }
 
     public InstrutorModel getInstrutorAt(int position){
@@ -57,13 +59,14 @@ public class InstrutorRVAdapter extends ListAdapter<InstrutorModel, InstrutorRVA
         TextView nuCPFInstrutorTV;
         TextView noInstrutorTV;
         //TextView dtNascInstrutorTV;
+        //TextView nuTelefoneTV;
 
         ViewHolder(@NonNull View itemView){
             super(itemView);
-            // TODO: 16/06/2022 Ajustar componente de data
             nuCPFInstrutorTV = itemView.findViewById(R.id.idTVNuCPFInstrutor);
             noInstrutorTV = itemView.findViewById(R.id.idTVnoInstrutor);
-            //dtNascInstrutor = itemView.findViewById(R.idTVDtNascInstrutor);
+            //dtNascInstrutorTV = itemView.findViewById(R.id.idTVDtNascInstrutor);
+            //nuTelefoneTV = itemView.findViewById(R.id.idTVNuTelefoneInstrutor);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
