@@ -32,12 +32,13 @@ public class NovoVeiculoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_veiculo);
 
+        //inicializando variaveis para cada campo (view)
         deMarcaVeiculoEdt = findViewById(R.id.idEdtdeMarcaVeiculo);
         deModeloVeiculoEdt = findViewById(R.id.idEdtdeModeloVeiculo);
         nuPlacaVeiculoEdt = findViewById(R.id.idEdtnuPlacaVeiculo);
         veiculoBtn = findViewById(R.id.idBtnSalvarVeiculo);
 
-        // intent para receber valores via intent
+        // intent para receber dados via intent
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_COD_VEICULO)) {
             //se receber o veiculo, seta os demais atributos
@@ -56,7 +57,7 @@ public class NovoVeiculoActivity extends AppCompatActivity {
                     Toast.makeText(NovoVeiculoActivity.this, "Preencha os dados do Veiculo", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                // Salva os dados preenchidos
                 salvarVeiculo(deMarcaVeiculo, deModeloVeiculo, nuPlacaVeiculo);
                 finish();
             }
@@ -66,7 +67,7 @@ public class NovoVeiculoActivity extends AppCompatActivity {
     private void salvarVeiculo(String deMarcaVeiculo, String deModeloVeiculo, String nuPlacaVeiculo){
         // passando os dados via intent
         Intent dados = new Intent();
-        // detalhes do curso
+        // detalhes do veiculo
         dados.putExtra(EXTRA_MARCA_VEICULO, deMarcaVeiculo);
         dados.putExtra(EXTRA_MODELO_VEICULO, deModeloVeiculo);
         dados.putExtra(EXTRA_PLACA_VEICULO, nuPlacaVeiculo);
@@ -76,34 +77,9 @@ public class NovoVeiculoActivity extends AppCompatActivity {
         }
 
         setResult(RESULT_OK, dados);
+
+        // retorna mensagem de confirmacao
         Toast.makeText(this, "Veiculo salvo", Toast.LENGTH_SHORT).show();
     }
-
-/*
-        // inicializando variaveis
-        nuCPFEdt = findViewById(R.id.idEdtNuCPF);
-        noVeiculoEdt = findViewById(R.id.idEdtNoVeiculo);
-        dtNascimentoDtp = findViewById(R.id.idDtpDtNascimento);
-        dtNascimentoDtp.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                com.how_vi.autoescola.DatePicker mDatePickerDialogFragment;
-                mDatePickerDialogFragment = new com.how_vi.autoescola.DatePicker();
-                mDatePickerDialogFragment.show(getSupportFragmentManager(),"DATE PICK");
-            }
-        });
-        veiculoBtn = findViewById(R.id.idBtnSalvarVeiculo);
-
-        // intent para receber valores via intent
-        Intent intent = getIntent();
-        if (intent.hasExtra(EXTRA_COD_VEICULO)){
-            //se receber o veiculo, seta os demais atributos
-            nuCPFEdt.setText(intent.getStringExtra(EXTRA_CPF_VEICULO));
-            noVeiculoEdt.setText(intent.getStringExtra(EXTRA_NOME_VEICULO));
-        }
-
- */
-
-
 
 }

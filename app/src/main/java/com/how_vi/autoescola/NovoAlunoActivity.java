@@ -32,12 +32,14 @@ public class NovoAlunoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_aluno);
 
+        //inicializando variaveis para cada campo (view)
         nuCPFEdt = findViewById(R.id.idEdtnuCPFAluno);
         noAlunoEdt = findViewById(R.id.idEdtnoAluno);
         dtNascimentoEdt = findViewById(R.id.idEdtDtNascAluno);
         nuTelefoneEdt = findViewById(R.id.idEdtnuTelAluno);
         alunoBtn = findViewById(R.id.idBtnSalvarAluno);
 
+        // Aplicando mascara para os campos
         nuCPFEdt.addTextChangedListener(MaskEditUtil.mask(nuCPFEdt, MaskEditUtil.FORMAT_CPF));
         dtNascimentoEdt.addTextChangedListener(MaskEditUtil.mask(dtNascimentoEdt, MaskEditUtil.FORMAT_DATE));
         nuTelefoneEdt.addTextChangedListener(MaskEditUtil.mask(nuTelefoneEdt,MaskEditUtil.FORMAT_FONE));
@@ -63,7 +65,7 @@ public class NovoAlunoActivity extends AppCompatActivity {
                     Toast.makeText(NovoAlunoActivity.this, "Preencha os dados do Aluno", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                // Salva os dados preenchidos
                 salvarAluno(nuCPFAluno, noAluno, dtNascimento, nuTelefone);
                 finish();
             }
@@ -75,7 +77,7 @@ public class NovoAlunoActivity extends AppCompatActivity {
     private void salvarAluno(String nuCPFAluno, String noAluno, String dtNascimento, String nuTelefone) {
         // passando os dados via intent
         Intent dados = new Intent();
-        // detalhes do curso
+        // detalhes do aluno
         dados.putExtra(EXTRA_CPF_ALUNO, nuCPFAluno);
         dados.putExtra(EXTRA_NOME_ALUNO, noAluno);
         dados.putExtra(EXTRA_DT_NASC_ALUNO, dtNascimento);
@@ -84,8 +86,9 @@ public class NovoAlunoActivity extends AppCompatActivity {
         if (co_aluno != -1) {
             dados.putExtra(EXTRA_COD_ALUNO, co_aluno);
         }
-
         setResult(RESULT_OK, dados);
+
+        // retorna mensagem de confirmacao
         Toast.makeText(this, "Aluno salvo", Toast.LENGTH_SHORT).show();
     }
 

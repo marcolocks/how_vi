@@ -21,6 +21,7 @@ import java.util.List;
 
 public class VeiculoActivity extends AppCompatActivity {
 
+    // criando as variaveis do Recycler View
     private RecyclerView veiculoRV;
     private static final int ADD_VEICULO_REQUEST = 1;
     private static final int EDIT_VEICULO_REQUEST = 2;
@@ -31,26 +32,33 @@ public class VeiculoActivity extends AppCompatActivity {
         super.onCreate(savedInstaceState);
         setContentView(R.layout.veiculo_main);
 
+        // inicializando variaveis e botao flutuante (novo)
         veiculoRV = findViewById(R.id.idRVVeiculo);
         FloatingActionButton fab = findViewById(R.id.idFABAdd);
 
+        // click listener para o botao novo
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // chama Activity de cadastro
                 Intent intent = new Intent(VeiculoActivity.this, NovoVeiculoActivity.class);
                 startActivityForResult(intent, ADD_VEICULO_REQUEST);
             }
         });
 
+        // layout manager para o adapter
         veiculoRV.setLayoutManager(new LinearLayoutManager(this));
         veiculoRV.setHasFixedSize(true);
 
+        //inicializa adapter para o Recycler View
         final VeiculoRVAdapter adapter = new VeiculoRVAdapter();
 
         veiculoRV.setAdapter(adapter);
 
+        // passando os dados para o View Model
         viewModelVeiculo = ViewModelProviders.of(this).get(ViewModelVeiculo.class);
 
+        // pega todos os registros para o View Model
         viewModelVeiculo.getTodosVeiculos().observe(this, new Observer<List<VeiculoModel>>() {
             @Override
             public void onChanged(List<VeiculoModel> veiculoModels) {
@@ -58,12 +66,14 @@ public class VeiculoActivity extends AppCompatActivity {
             }
         });
 
+        // metodo para arrastar para o lado e deletar o item do Recycler View
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 return false;
             }
 
+            // deletando
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 viewModelVeiculo.delete(adapter.getVeiculoAt(viewHolder.getAdapterPosition()));
@@ -71,6 +81,7 @@ public class VeiculoActivity extends AppCompatActivity {
             }
         }).attachToRecyclerView(veiculoRV);
 
+        // click listener para o item do Recycler View (editar)
         adapter.setOnClickListener(new VeiculoRVAdapter.OnItemClickListener(){
             @Override
             public void onItemClick(VeiculoModel model){
@@ -80,13 +91,14 @@ public class VeiculoActivity extends AppCompatActivity {
                 intent.putExtra(NovoVeiculoActivity.EXTRA_MARCA_VEICULO,model.getDeModelo());
                 intent.putExtra(NovoVeiculoActivity.EXTRA_PLACA_VEICULO,model.getNuPlaca());
 
-
+                // chama activity para edicao
                 startActivityForResult(intent, EDIT_VEICULO_REQUEST);
             }
         });
 
     }
 
+    // atualiza e exibe mensagem de confirmacao
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -119,6 +131,5 @@ public class VeiculoActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Veiculo não foi salvo", Toast.LENGTH_SHORT).show();
         }
-
     }
 }

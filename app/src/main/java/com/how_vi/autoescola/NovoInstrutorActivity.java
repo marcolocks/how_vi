@@ -36,6 +36,7 @@ public class NovoInstrutorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_novo_instrutor);
 
+        //inicializando variaveis para cada campo (view)
         nuCPFEdt = findViewById(R.id.idEdtnuCPFInstrutor);
         noInstrutorEdt = findViewById(R.id.idEdtnoInstrutor);
         dtNascimentoEdt = findViewById(R.id.idEdtDtNascInstrutor);
@@ -48,7 +49,7 @@ public class NovoInstrutorActivity extends AppCompatActivity {
         nuTelefoneEdt.addTextChangedListener(MaskEditUtil.mask(nuTelefoneEdt, MaskEditUtil.FORMAT_FONE));
 
 
-        // intent para receber valores via intent
+        // intent para receber dados via intent
         Intent intent = getIntent();
         if (intent.hasExtra(EXTRA_COD_INSTRUTOR)) {
             //se receber o instrutor, seta os demais atributos
@@ -68,7 +69,7 @@ public class NovoInstrutorActivity extends AppCompatActivity {
                     Toast.makeText(NovoInstrutorActivity.this, "Preencha os dados do Instrutor", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                // Salva os dados preenchidos
                 salvarInstrutor(nuCPFInstrutor, noInstrutor, dtNascInstrutor, nuTelefoneInstrutor);
                 finish();
             }
@@ -79,7 +80,7 @@ public class NovoInstrutorActivity extends AppCompatActivity {
     private void salvarInstrutor(String nuCPFInstrutor, String noInstrutor, String dtNascInstrutor, String nuTelefoneInstrutor){
         // passando os dados via intent
         Intent dados = new Intent();
-        // detalhes do curso
+        // detalhes do instrutor
         dados.putExtra(EXTRA_CPF_INSTRUTOR, nuCPFInstrutor);
         dados.putExtra(EXTRA_NOME_INSTRUTOR, noInstrutor);
         dados.putExtra(EXTRA_DT_NASC_INSTRUTOR, dtNascInstrutor);
@@ -88,36 +89,10 @@ public class NovoInstrutorActivity extends AppCompatActivity {
         if(co_instrutor != -1){
             dados.putExtra(EXTRA_COD_INSTRUTOR, co_instrutor);
         }
-
         setResult(RESULT_OK, dados);
+
+        // retorna mensagem de confirmacao
         Toast.makeText(this, "Instrutor salvo", Toast.LENGTH_SHORT).show();
     }
-
-/*
-        // inicializando variaveis
-        nuCPFEdt = findViewById(R.id.idEdtNuCPF);
-        noInstrutorEdt = findViewById(R.id.idEdtNoInstrutor);
-        dtNascimentoEdt = findViewById(R.id.idDtpDtNascimento);
-        dtNascimentoEdt.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                com.how_vi.autoescola.DatePicker mDatePickerDialogFragment;
-                mDatePickerDialogFragment = new com.how_vi.autoescola.DatePicker();
-                mDatePickerDialogFragment.show(getSupportFragmentManager(),"DATE PICK");
-            }
-        });
-        instrutorBtn = findViewById(R.id.idBtnSalvarInstrutor);
-
-        // intent para receber valores via intent
-        Intent intent = getIntent();
-        if (intent.hasExtra(EXTRA_COD_INSTRUTOR)){
-            //se receber o instrutor, seta os demais atributos
-            nuCPFEdt.setText(intent.getStringExtra(EXTRA_CPF_INSTRUTOR));
-            noInstrutorEdt.setText(intent.getStringExtra(EXTRA_NOME_INSTRUTOR));
-        }
-
- */
-
-
 
 }

@@ -26,6 +26,7 @@ import java.util.List;
 
 public class AlunoActivity extends AppCompatActivity {
 
+    // criando as variaveis do Recycler View
     private RecyclerView alunoRV;
     private static final int ADD_ALUNO_REQUEST = 1;
     private static final int EDIT_ALUNO_REQUEST = 2;
@@ -36,26 +37,34 @@ public class AlunoActivity extends AppCompatActivity {
         super.onCreate(savedInstaceState);
         setContentView(R.layout.aluno_main);
 
+
+        // inicializando variaveis e botao flutuante (novo)
         alunoRV = findViewById(R.id.idRVAluno);
         FloatingActionButton fab = findViewById(R.id.idFABAdd);
 
+        // click listener para o botao novo
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // chama Activity de cadastro
                 Intent intent = new Intent(AlunoActivity.this, NovoAlunoActivity.class);
                 startActivityForResult(intent, ADD_ALUNO_REQUEST);
             }
         });
 
+        // layout manager para o adapter
         alunoRV.setLayoutManager(new LinearLayoutManager(this));
         alunoRV.setHasFixedSize(true);
 
+        //inicializa adapter para o Recycler View
         final AlunoRVAdapter adapter = new AlunoRVAdapter();
 
         alunoRV.setAdapter(adapter);
 
+        // passando os dados para o View Model
         viewModelAluno = ViewModelProviders.of(this).get(ViewModelAluno.class);
 
+        // pega todos os registros para o View Model
         viewModelAluno.getTodosAlunos().observe(this, new Observer<List<AlunoModel>>() {
             @Override
             public void onChanged(List<AlunoModel> alunoModels) {
@@ -63,12 +72,13 @@ public class AlunoActivity extends AppCompatActivity {
             }
         });
 
+        // metodo para arrastar para o lado e deletar o item do Recycler View
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
                 return false;
             }
-
+            // deletando
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 viewModelAluno.delete(adapter.getAlunoAt(viewHolder.getAdapterPosition()));
@@ -76,6 +86,7 @@ public class AlunoActivity extends AppCompatActivity {
             }
         }).attachToRecyclerView(alunoRV);
 
+        // click listener para o item do Recycler View (editar)
         adapter.setOnClickListener(new AlunoRVAdapter.OnItemClickListener(){
             @Override
             public void onItemClick(AlunoModel model){
@@ -86,12 +97,14 @@ public class AlunoActivity extends AppCompatActivity {
                 intent.putExtra(NovoAlunoActivity.EXTRA_DT_NASC_ALUNO,model.getDtNascAluno());
                 intent.putExtra(NovoAlunoActivity.EXTRA_NU_TELEFONE_ALUNO,model.getNuTelefoneAluno());
 
+                // chama activity para edicao
                 startActivityForResult(intent, EDIT_ALUNO_REQUEST);
             }
         });
 
     }
 
+    // atualiza e exibe mensagem de confirmacao
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -126,6 +139,5 @@ public class AlunoActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Aluno não foi salvo", Toast.LENGTH_SHORT).show();
         }
-
     }
 }
