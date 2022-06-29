@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NovoInstrutorActivity">
+
+    <EditText
+        android:id="@+id/idEdtnuCPFInstrutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="@string/digite_o_cpf_do_instrutor"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/idEdtnoInstrutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="@string/digite_o_nome_do_instrutor" />
+
+    <EditText
+        android:id="@+id/idEdtDtNascInstrutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="@string/data_de_nascimento"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/idEdtNuTelefoneInstrutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:hint="@string/numero_de_telefone"
+        android:inputType="number" />
+
+
+    <Button
+        android:id="@+id/idBtnSalvarInstrutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:padding="10dp"
+        android:hint="@string/salvar"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

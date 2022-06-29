@@ -6,10 +6,17 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.1239488731920619" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1085" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1085" />
+        <entry key="app/src/main/res/layout-land/activity_novo_aluno.xml" value="0.33" />
+        <entry key="app/src/main/res/layout-land/activity_novo_instrutor.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-land/activity_novo_veiculo.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-land/fragment_first.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_novo_aluno.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/activity_novo_instrutor.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/activity_novo_veiculo.xml" value="0.33" />
         <entry key="app/src/main/res/layout/aluno_rv_item.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/veiculo_main.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/veiculo_rv_item.xml" value="0.35625" />
